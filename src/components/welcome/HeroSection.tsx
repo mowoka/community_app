@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { CheckCircle2, Users, Trophy } from 'lucide-react';
+import Logo from '@/assets/logo.png';
 
 export function HeroSection() {
   return (
@@ -13,10 +14,10 @@ export function HeroSection() {
         <div className="relative mb-5 flex items-center justify-center">
           <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl scale-125 animate-pulse" />
           <div className="relative w-28 h-28 rounded-full bg-surface-container-highest p-3 flex items-center justify-center shadow-lg">
-            <img
+            <Image
               alt="Community Sports Admin Emblem"
-              className="w-full h-full object-contain"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB2AqBMbHMt2zQOVDGfnEshrGs8x6LQNKbRtdokOujUHtwNyzGA1hgRJ3was2d3wDaQb-A8L3DfCFyPuIdBwAbEwMIFUHPe5holGqhYNCAg81_4-dr5YnO0oLMKp__MKrAY70sAePj286iVUHbxGnabnS6TzaPkObF3gfH0mgsAfHJoeDFZv96M07i5I9L_FOnwWB3TIFjvDZTgsKHTW3c7arxeCxMCE_7yRh0yEGMr2fuspnfP6BrWQ"
+              className="w-full h-full object-cover"
+              src={Logo}
             />
           </div>
           <span className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-surface-container-lowest text-xs shadow-md">
