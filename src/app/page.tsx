@@ -1,18 +1,16 @@
 import { MobileScreenWrapper } from '@/components/commons/mobile-screen-wrapper';
-import { ActionButtons } from '@/components/welcome/ActionButton';
-import { FeaturedEvent } from '@/components/welcome/FeaturedEvent';
-import { HeroSection } from '@/components/welcome/HeroSection';
-import { TacticalFeatures } from '@/components/welcome/TacticalFeatures';
+import { ActionButtons } from '@/components/welcome/action-buttons';
+import { FeaturedEvent } from '@/components/welcome/featured-event';
+import { HeroSection } from '@/components/welcome/hero-section';
+import { TacticalFeatures } from '@/components/welcome/tactical-featured';
 
 export default function Home() {
   return (
     <MobileScreenWrapper>
-      <div className="px-5 py-5">
-        <HeroSection />
-        <TacticalFeatures />
-        <FeaturedEvent />
-        <ActionButtons />
-      </div>
+      <HeroSection />
+      <TacticalFeatures />
+      <FeaturedEvent />
+      <ActionButtons />
     </MobileScreenWrapper>
   );
 }
