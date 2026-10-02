@@ -10,9 +10,15 @@ export function ActionButtons() {
   const RedirectLogin = () => {
     router.push('/login');
   };
+
+  const RedirectRegister = () => {
+    router.push('/register');
+  };
+
   return (
     <div className="flex flex-col gap-3 mt-auto">
       <button
+        onClick={RedirectRegister}
         type="button"
         className="w-full h-12 rounded-lg bg-gradient-to-r from-primary-container to-primary flex items-center justify-center gap-2 text-white text-sm font-semibold shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform"
       >

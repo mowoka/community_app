@@ -1,4 +1,9 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
+
 export function SocialAuth() {
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-4 mt-5">
       {/* Divider */}
@@ -47,6 +52,7 @@ export function SocialAuth() {
         <p className="text-xs text-on-surface-variant">
           Don&apos;t have an admin account?{' '}
           <button
+            onClick={() => router.push('/register')}
             type="button"
             className="text-primary font-semibold hover:underline ml-1"
           >
