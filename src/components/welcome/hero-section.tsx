@@ -12,8 +12,8 @@ export function HeroSection() {
       <div className="relative flex flex-col items-center text-center">
         {/* Emblem Badge */}
         <div className="relative mb-5 flex items-center justify-center">
-          <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl scale-125 animate-pulse" />
-          <div className="relative w-28 h-28 rounded-full bg-surface-container-highest p-3 flex items-center justify-center shadow-lg">
+          <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl scale-125 animate-pulse" />
+          <div className="relative w-28 h-28 rounded-2xl bg-surface-container-highest p-3 flex items-center justify-center shadow-lg">
             <Image
               alt="Community Sports Admin Emblem"
               className="w-full h-full object-cover"

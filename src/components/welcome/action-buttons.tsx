@@ -1,7 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight, LogIn } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export function ActionButtons() {
+  const router = useRouter();
+
+  const RedirectLogin = () => {
+    router.push('/login');
+  };
   return (
     <div className="flex flex-col gap-3 mt-auto">
       <button
@@ -13,8 +21,9 @@ export function ActionButtons() {
       </button>
 
       <button
+        onClick={RedirectLogin}
         type="button"
-        className="w-full h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface text-sm font-semibold active:scale-[0.98] transition-transform"
+        className="cursor-pointer w-full h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface text-sm font-semibold active:scale-[0.98] transition-transform"
       >
         <div className="flex items-center gap-2">
           <LogIn className="w-4 h-4" />
