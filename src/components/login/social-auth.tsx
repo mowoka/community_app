@@ -46,20 +46,6 @@ export function SocialAuth() {
           </span>
         </button>
       </div>
-
-      {/* Registration Link */}
-      <div className="text-center pt-1">
-        <p className="text-xs text-on-surface-variant">
-          Don&apos;t have an admin account?{' '}
-          <button
-            onClick={() => router.push('/register')}
-            type="button"
-            className="text-primary font-semibold hover:underline ml-1"
-          >
-            Register here
-          </button>
-        </p>
-      </div>
     </div>
   );
 }

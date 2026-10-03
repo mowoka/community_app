@@ -60,21 +60,11 @@ export function AdminLoginForm() {
         errorMessage={errors?.passowrd?.message}
       />
 
-      {/* Remember Me & Forgot Password */}
-      <div className="flex items-center justify-between pt-0.5 pb-1">
-        <button
-          type="button"
-          className="text-xs font-semibold text-secondary hover:text-secondary-fixed transition-colors"
-        >
-          Forgot Password?
-        </button>
-      </div>
-
       {/* Submit Button */}
       <button
         type="submit"
         disabled={isLoading}
-        className="relative overflow-hidden w-full h-12 rounded-lg bg-primary hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-on-primary text-sm font-semibold shadow-lg group disabled:opacity-70"
+        className="mt-5 relative overflow-hidden w-full h-12 rounded-lg bg-primary hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-on-primary text-sm font-semibold shadow-lg group disabled:opacity-70"
       >
         {isLoading ? (
           <Loader2 className="w-5 h-5 animate-spin" />
