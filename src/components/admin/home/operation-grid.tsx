@@ -12,6 +12,7 @@ import {
   Settings,
   SlidersHorizontal,
 } from 'lucide-react';
+import { cn } from '@/utils/class-merge';
 
 export function OperationsGrid() {
   return (
@@ -54,131 +55,114 @@ export function OperationsGrid() {
         </button>
 
         {/* Attendance */}
-        <button
-          type="button"
-          className="rounded-2xl bg-slate-900 p-3 flex flex-col justify-between text-left gap-3 border border-slate-800 shadow-md hover:border-slate-700 active:scale-95 transition-all"
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="w-9 h-9 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
-              <Users className="w-4 h-4" />
-            </div>
-            <span className="w-2 h-2 rounded-full bg-sky-400"></span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold text-slate-100">
-              Attendance
-            </span>
-            <span className="text-[10px] text-slate-400 mt-0.5 truncate">
-              42 Checked-in Today
-            </span>
-          </div>
-        </button>
+        <MenuItem
+          icon={<Users className="w-4 h-4" />}
+          styleIcon="bg-sky-500/10 text-sky-400"
+          text="Attendance"
+          subText="Checked-in Before Match"
+          onClick={() => {}}
+          altIcon={<span className="w-2 h-2 rounded-full bg-sky-400"></span>}
+        />
 
         {/* Lapangan */}
-        <button
-          type="button"
-          className="rounded-2xl bg-slate-900 p-3 flex flex-col justify-between text-left gap-3 border border-slate-800 shadow-md hover:border-slate-700 active:scale-95 transition-all"
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
-              <MapPin className="w-4 h-4" />
-            </div>
+        <MenuItem
+          icon={<MapPin className="w-4 h-4" />}
+          styleIcon="bg-emerald-500/10 text-emerald-400"
+          text="Lapangan"
+          subText="3 Venues Active"
+          onClick={() => {}}
+          altIcon={
             <span className="px-1.5 py-0.5 rounded-full bg-slate-800 text-emerald-400 text-[9px] font-medium">
               All Open
             </span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold text-slate-100">
-              Lapangan
-            </span>
-            <span className="text-[10px] text-slate-400 mt-0.5 truncate">
-              3 Venues Active
-            </span>
-          </div>
-        </button>
+          }
+        />
 
         {/* Pertandingan */}
-        <button
-          type="button"
-          className="rounded-2xl bg-slate-900 p-3 flex flex-col justify-between text-left gap-3 border border-slate-800 shadow-md hover:border-slate-700 active:scale-95 transition-all"
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
-              <Trophy className="w-4 h-4" />
-            </div>
+        <MenuItem
+          icon={<Trophy className="w-4 h-4 text-amber-400" />}
+          styleIcon="bg-amber-500/10"
+          text="Pertandingan"
+          subText="Live & Upcoming"
+          onClick={() => {}}
+          altIcon={
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold text-slate-100">
-              Pertandingan
-            </span>
-            <span className="text-[10px] text-slate-400 mt-0.5 truncate">
-              Live & Upcoming
-            </span>
-          </div>
-        </button>
+          }
+        />
 
         {/* Jadwal */}
-        <button
-          type="button"
-          className="rounded-2xl bg-slate-900 p-3 flex flex-col justify-between text-left gap-3 border border-slate-800 shadow-md hover:border-slate-700 active:scale-95 transition-all"
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="w-9 h-9 rounded-xl bg-slate-800 text-slate-200 flex items-center justify-center">
-              <Calendar className="w-4 h-4" />
-            </div>
-            <span className="text-[9px] text-slate-400">Week 42</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold text-slate-100">Jadwal</span>
-            <span className="text-[10px] text-slate-400 mt-0.5 truncate">
-              Weekly Timetable
-            </span>
-          </div>
-        </button>
+        <MenuItem
+          icon={<Calendar className="w-4 h-4" />}
+          text="Jadwal"
+          subText="Weekly Timetable"
+          onClick={() => {}}
+          altIcon={<span className="text-[9px] text-slate-400">Week 42</span>}
+        />
 
         {/* History */}
-        <button
-          type="button"
-          className="rounded-2xl bg-slate-900 p-3 flex flex-col justify-between text-left gap-3 border border-slate-800 shadow-md hover:border-slate-700 active:scale-95 transition-all"
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="w-9 h-9 rounded-xl bg-slate-800 text-slate-200 flex items-center justify-center">
-              <Clock className="w-4 h-4" />
-            </div>
-            <ChevronRight className="w-4 h-4 text-slate-500" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold text-slate-100">
-              History
-            </span>
-            <span className="text-[10px] text-slate-400 mt-0.5 truncate">
-              Past Match Logs
-            </span>
-          </div>
-        </button>
+        <MenuItem
+          icon={<Clock className="w-4 h-4" />}
+          text="History"
+          subText="Past Match Logs"
+          onClick={() => {}}
+          altIcon={<ChevronRight className="w-4 h-4 text-slate-500" />}
+        />
 
         {/* Setting */}
-        <button
-          type="button"
-          className="rounded-2xl bg-slate-900 p-3 flex flex-col justify-between text-left gap-3 border border-slate-800 shadow-md hover:border-slate-700 active:scale-95 transition-all"
-        >
-          <div className="flex items-center justify-between w-full">
-            <div className="w-9 h-9 rounded-xl bg-slate-800 text-slate-200 flex items-center justify-center">
-              <Settings className="w-4 h-4" />
-            </div>
+        <MenuItem
+          icon={<Settings className="w-4 h-4" />}
+          text="Setting"
+          subText="Club & Config"
+          onClick={() => {}}
+          altIcon={
             <span className="w-2 h-2 rounded-full bg-emerald-500/40"></span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold text-slate-100">
-              Setting
-            </span>
-            <span className="text-[10px] text-slate-400 mt-0.5 truncate">
-              Club & Config
-            </span>
-          </div>
-        </button>
+          }
+        />
       </div>
     </section>
+  );
+}
+
+interface MenuItemProps {
+  onClick: () => void;
+  text: string;
+  subText: string;
+  icon: React.ReactNode;
+  styleIcon?: string;
+  altIcon?: React.ReactNode;
+}
+
+function MenuItem({
+  onClick,
+  text,
+  subText,
+  icon,
+  styleIcon = '',
+  altIcon,
+}: MenuItemProps) {
+  return (
+    <button
+      onClick={onClick}
+      type="button"
+      className="rounded-2xl bg-slate-900 p-3 flex flex-col justify-between text-left gap-3 border border-slate-800 shadow-md hover:border-slate-700 active:scale-95 transition-all"
+    >
+      <div className="flex items-center justify-between w-full">
+        <div
+          className={cn(
+            'w-9 h-9 rounded-xl bg-slate-800 text-slate-200 flex items-center justify-center',
+            styleIcon,
+          )}
+        >
+          {icon}
+        </div>
+        {altIcon && altIcon}
+      </div>
+      <div className="flex flex-col">
+        <span className="text-xs font-semibold text-slate-100">{text}</span>
+        <span className="text-[10px] text-slate-400 mt-0.5 truncate">
+          {subText}
+        </span>
+      </div>
+    </button>
   );
 }
