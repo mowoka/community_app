@@ -4,7 +4,7 @@ import { FeaturedEvent } from '@/components/welcome/featured-event';
 import { HeroSection } from '@/components/welcome/hero-section';
 import { TacticalFeatures } from '@/components/welcome/tactical-featured';
 
-export default function Home() {
+export default function Welcome() {
   return (
     <MobileScreenWrapper>
       <HeroSection />
