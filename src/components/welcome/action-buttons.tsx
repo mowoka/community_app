@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { Button } from '../commons/button';
 
 export function ActionButtons() {
   const router = useRouter();
@@ -13,14 +14,12 @@ export function ActionButtons() {
 
   return (
     <div className="flex flex-col gap-3 mt-auto">
-      <button
+      <Button
         onClick={redirectLogin}
-        type="button"
-        className="w-full h-12 rounded-lg bg-gradient-to-r from-primary-container to-primary flex items-center justify-center gap-2 text-white text-sm font-semibold shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform"
-      >
-        <span>Get Started</span>
-        <ArrowRight className="w-4 h-4" />
-      </button>
+        variant="primary"
+        rightIcon={<ArrowRight className="w-4 h-4" />}
+        btnText="Get Started"
+      />
 
       <div className="flex items-center justify-center gap-3 pt-2">
         <Link

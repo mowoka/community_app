@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LoginFormData, LoginSchema } from '@/constants/login.schema';
 import { Input } from '@/components/commons/input';
+import { Button } from '../commons/button';
 
 export function AdminLoginForm() {
   const {
@@ -61,20 +62,18 @@ export function AdminLoginForm() {
       />
 
       {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="mt-5 relative overflow-hidden w-full h-12 rounded-lg bg-primary hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-on-primary text-sm font-semibold shadow-lg group disabled:opacity-70"
-      >
-        {isLoading ? (
-          <Loader2 className="w-5 h-5 animate-spin" />
-        ) : (
-          <>
-            <LogIn className="w-5 h-5 transition-transform group-hover:scale-110" />
-            <span>Sign In as Admin</span>
-          </>
-        )}
-      </button>
+      <Button
+        variant="primary"
+        btnText="Sign In as Admin"
+        isLoading={isLoading}
+        leftIcon={
+          <LogIn className="w-5 h-5 transition-transform group-hover:scale-110" />
+        }
+        btnProps={{
+          disabled: isLoading,
+          type: 'submit',
+        }}
+      />
     </form>
   );
 }
