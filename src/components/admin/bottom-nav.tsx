@@ -3,13 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { Home, Trophy, Clock, User } from 'lucide-react';
+import { useTabStore } from '@/store/tab/tab-store-provider';
 
-interface BottomNavProps {
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-}
-
-export function BottomNav({ activeTab, setActiveTab }: BottomNavProps) {
+export function BottomNav() {
+  const activeTab = useTabStore((s) => s.activeTab);
+  const setActiveTab = useTabStore((s) => s.setActiveTab);
   return (
     <nav className="fixed bottom-0 w-full md:max-w-120 z-50 bg-slate-950/90 backdrop-blur-xl border-t border-slate-800/80">
       <div className="max-w-lg mx-auto flex justify-around items-center h-16 px-2">
