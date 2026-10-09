@@ -3,7 +3,7 @@ import { Eye, EyeOff } from 'lucide-react';
 
 interface Props {
   inputId: string;
-  label: string;
+  label?: string;
   subLabel?: string;
   errorMessage?: string;
   icon: React.ReactNode;
@@ -13,7 +13,7 @@ interface Props {
 export function Input({
   inputId,
   icon,
-  label,
+  label = '',
   subLabel = '',
   errorMessage = '',
   inputProps,
@@ -21,17 +21,19 @@ export function Input({
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="flex flex-col gap-1.5 text-left">
-      <label
-        className="text-sm text-on-surface-variant flex items-center justify-between"
-        htmlFor={inputId}
-      >
-        <span>{label}</span>
-        {subLabel && (
-          <span className="text-xs text-primary font-semibold">
-            Verified ID
-          </span>
-        )}
-      </label>
+      {label && (
+        <label
+          className="text-sm text-on-surface-variant flex items-center justify-between"
+          htmlFor={inputId}
+        >
+          <span>{label}</span>
+          {subLabel && (
+            <span className="text-xs text-primary font-semibold">
+              Verified ID
+            </span>
+          )}
+        </label>
+      )}
       <div className="relative flex items-center">
         {icon}
         <input
