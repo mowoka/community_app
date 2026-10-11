@@ -1,4 +1,4 @@
-import { Venue } from '@/types/venue.type';
+import { SurfaceOption, Venue } from '@/types/venue.type';
 
 export const VENUES_DATA: Venue[] = [
   {
@@ -79,4 +79,29 @@ export const FILTER_CATEGORIES = [
   { id: 'Taraflex', label: 'Taraflex' },
   { id: 'Coran semen', label: 'coran-semen' },
   { id: 'Lantai Keramik', label: 'lantai-keramik' },
+];
+
+export const SURFACE_OPTIONS: SurfaceOption[] = [
+  {
+    value: 'bwf-vinyl',
+    title: 'Karpet Vinyl BWF Standard',
+    description: 'Optimal shock absorption & grip',
+  },
+  {
+    value: 'wood-parket',
+    title: 'Kayu Parket Interlock',
+    description: 'Elastisitas tinggi, pantulan stabil',
+  },
+  {
+    value: 'cement-polymer',
+    title: 'Semen Cor Polimer',
+    description: 'Struktur semi-outdoor standar',
+  },
+];
+
+export const SHUTTLECOCK_PRESETS = [
+  'Yonex AS 50',
+  'Victor Champion',
+  'JP Gold',
+  'Samurai',
 ];

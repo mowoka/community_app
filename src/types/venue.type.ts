@@ -20,3 +20,16 @@ export interface Venue {
   imageUrl: string;
   amenities: Amenity[];
 }
+
+export interface SurfaceOption {
+  value: string;
+  title: string;
+  description: string;
+}
+
+export interface Facility {
+  id: string;
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+}

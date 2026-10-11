@@ -104,7 +104,7 @@ function ImageBanner({ venue }: Props) {
         fill
         className="object-cover opacity-90"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-surface-container-lowest/90 via-transparent to-transparent" />
 
       {/* Price Badge */}
       <div className="absolute top-2 right-2.5">
@@ -132,7 +132,7 @@ function VenueDetail({ venue }: Props) {
     <div className="flex flex-col gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
       {/* Shuttlecock Recommendation */}
       <div className="flex items-center gap-space-xs bg-surface-container/60 px-2 py-1.5 rounded-lg">
-        <Award className="w-3.5 h-3.5 text-tertiary flex-shrink-0" />
+        <Award className="w-3.5 h-3.5 text-tertiary shrink-0" />
         <span className="text-[11px] font-medium text-on-surface-variant">
           Shuttlecock Rekomendasi:
         </span>
@@ -142,14 +142,14 @@ function VenueDetail({ venue }: Props) {
       </div>
 
       {/* Full Address */}
-      <div className="flex items-start gap-space-xs pt-0.5">
-        <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+      <div className="flex items-start gap-space-xs pt-0.5 px-2">
+        <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
         <span className="line-clamp-2 text-on-surface">{venue.address}</span>
       </div>
 
       {/* Short Map Link */}
-      <div className="flex items-center gap-space-xs">
-        <LinkIcon className="w-3.5 h-3.5 text-outline flex-shrink-0" />
+      <div className="flex items-center gap-space-xs px-2">
+        <LinkIcon className="w-3.5 h-3.5 text-outline shrink-0" />
         <span className="truncate text-secondary font-label-md text-label-md select-all">
           {venue.mapsUrl.replace(/^https?:\/\//, '')}
         </span>

@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
+import { cn } from '@/utils/class-merge';
 
 interface Props {
   inputId: string;
   label?: string;
   subLabel?: string;
   errorMessage?: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   inputProps: React.InputHTMLAttributes<HTMLInputElement>;
+  inputStyle?: string;
 }
 
 export function Input({
@@ -17,6 +19,7 @@ export function Input({
   subLabel = '',
   errorMessage = '',
   inputProps,
+  inputStyle = '',
 }: Props) {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -26,10 +29,13 @@ export function Input({
           className="text-sm text-on-surface-variant flex items-center justify-between"
           htmlFor={inputId}
         >
-          <span>{label}</span>
+          <span>
+            {label}{' '}
+            {inputProps.required && <span className="text-error">*</span>}
+          </span>
           {subLabel && (
             <span className="text-xs text-primary font-semibold">
-              Verified ID
+              {subLabel}
             </span>
           )}
         </label>
@@ -37,7 +43,10 @@ export function Input({
       <div className="relative flex items-center">
         {icon}
         <input
-          className="w-full h-12 pl-11 pr-4 bg-surface-container-highest rounded-lg text-on-surface text-sm placeholder:text-outline focus:outline-none focus:bg-surface-bright transition-all"
+          className={cn(
+            'w-full h-12 pl-11 pr-4 bg-surface-container-highest rounded-lg text-on-surface text-sm placeholder:text-outline focus:outline-none focus:bg-surface-bright transition-all',
+            inputStyle,
+          )}
           id={inputId}
           {...inputProps}
           type={showPassword ? 'text' : inputProps.type}

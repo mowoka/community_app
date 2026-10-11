@@ -8,9 +8,11 @@ import { VenueSync } from '@/components/admin/venue/venue-sync';
 import { VenueTitle } from '@/components/admin/venue/venue-title';
 import { MobileScreenWrapper } from '@/components/commons/mobile-screen-wrapper';
 import { VENUES_DATA } from '@/constants/venue';
+import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
 export default function VenuePage() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const filteredVenues = useMemo(() => {
@@ -32,7 +34,7 @@ export default function VenuePage() {
       <VenueTitle
         title="Manajemen Lapangan"
         description="Kelola venue &amp; gor badminton komunitas"
-        onClick={() => {}}
+        onClick={() => router.push('/admin/venue/register')}
       />
       <SearchInput
         value={searchQuery}
